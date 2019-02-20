@@ -4,16 +4,42 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    duration: 500,
+    group: [
+      {id: 1,
+      name: 'test1'},
+      {id: 2,
+      name: 'test2'}
+    ]
+  },
+  //事件处理函数
+  //模式切换
+  bindchange: function (e) {
+    var ii = parseFloat(e.detail.current);
+    this.setData({
+      mode: ii
+    })
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  //模式切换
+  swichNav: function (e) {
+    var that = this;
+    var mode = parseFloat(e.currentTarget.dataset.current);
+    if (this.data.mode == mode) {
+      return false;
+    } else {
+      that.setData({
+        mode: mode
+      })
+    }
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

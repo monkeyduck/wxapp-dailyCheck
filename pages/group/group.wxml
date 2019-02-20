@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="group-name">群组名称:{{groupName}}</view>
+  <view>群组人数:{{leftNumber}}/{{totalNumber}}</view>
+</view>
+
+<view class="container">
+  <view class="group-rank">
+    <text>排行榜</text>
+    <block wx:for="{{ranklist}}">
+      <view class="rank-item">姓名:{{item.name}},{{item.insistDays}},{{item.profit}}</view>
+    </block>
+  </view>
+</view>

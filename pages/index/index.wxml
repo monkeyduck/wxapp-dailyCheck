@@ -1,13 +1,17 @@
 <!--index.wxml-->
-<view class="container">˜
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+<button class='sqbtn' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 加载中••• </button>
+<block wx:else>
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+   <block wx:for="{{group}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="group-item">
+            <view class="group-left">
+                <view class="group-avatar">
+                  <image src="{{userInfo.avatarUrl}}"></image>
+                </view>
+            </view>
+        </view>
+
+   </block>
+</scroll-view>
+</block>

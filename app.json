@@ -1,12 +1,41 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/create/create",
+    "pages/userCenter/userCenter",
+    "pages/group/group"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#DE4C56",
+    "borderStyle": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的群组",
+        "iconPath": "images/red-packet.png",
+        "selectedIconPath": "images/red-packet-on.png"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "创建群组",
+        "iconPath": "images/square.png",
+        "selectedIconPath": "images/square-on.png"
+      },
+      {
+        "pagePath": "pages/userCenter/userCenter",
+        "text": "用户中心",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-on.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#de4c56",
+    "navigationBarTitleText": "keep助手",
+    "navigationBarTextStyle": "white"
   }
+
 }
